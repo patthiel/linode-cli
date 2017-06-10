@@ -18,7 +18,7 @@ setup(
     author_email="wsmith@linode.com",
     url="https://www.linode.com/docs/platform/linode-cli",
     packages=['linodecli','linodecli.resources'],
-    install_requires=["linode-api>=4.1.0b0","terminaltables","colorclass"],
+    install_requires=["linode-api>=4.1.0b0","terminaltables","colorclass", "argcomplete"],
     entry_points={
         "console_scripts": [ "linode-beta = linodecli.cli:main" ],
     },

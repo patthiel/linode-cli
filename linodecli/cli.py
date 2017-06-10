@@ -4,6 +4,7 @@ import argparse
 import pkg_resources
 
 import linode
+import argcomplete
 
 from linodecli import config, resources
 
@@ -36,6 +37,8 @@ def main():
     parser.add_argument('--separator', metavar='SEPARATOR', type=str, default=':',
             help="the field separator when using raw output")
 
+    argcomplete.autocomplete(parser)
+    print('i did it')
     args, unparsed = parser.parse_known_args()
     sys.argv = sys.argv[:1] # clean up sys.argv so future parsers works as expected
 
