@@ -33,7 +33,7 @@ class CLI:
         self.version = version
         self.base_url = base_url
         self.spec_version = 'None'
-        self.suppress_warnings = False
+        self.suppress_warnings = True
 
         self.output_handler = OutputHandler()
         self.config = CLIConfig(self.base_url, skip_config=skip_config)
