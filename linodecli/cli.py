@@ -393,20 +393,20 @@ complete -F _linode_cli linode-cli""")
                 spec_major_minor_version = spec_version
                 current_major_minor_version = self.spec_version
 
-            try:
-                if LooseVersion(spec_major_minor_version) > LooseVersion(current_major_minor_version) and not self.suppress_warnings:
-                    print("The API responded with version {}, which is newer than "
-                          "the CLI's version of {}.  Please update the CLI to get "
-                          "access to the newest features.  You can update with a "
-                          "simple `pip install --upgrade linode-cli`".format(
-                              spec_version, self.spec_version
-                          ), file=stderr)
-            except:
-                # if this comparison or parsing failed, still process output
-                print("Parsing failed when comparing local version {} with server "
-                     "version {}.  If this problem persists, please open a ticket "
-                     "with `linode-cli support ticket-create`".format(
-                    self.spec_version, spec_version), file=stderr)
+            # try:
+            #     if LooseVersion(spec_major_minor_version) > LooseVersion(current_major_minor_version) and not self.suppress_warnings:
+            #         print("The API responded with version {}, which is newer than "
+            #               "the CLI's version of {}.  Please update the CLI to get "
+            #               "access to the newest features.  You can update with a "
+            #               "simple `pip install --upgrade linode-cli`".format(
+            #                   spec_version, self.spec_version
+            #               ), file=stderr)
+            # except:
+            #     # if this comparison or parsing failed, still process output
+            #     print("Parsing failed when comparing local version {} with server "
+            #          "version {}.  If this problem persists, please open a ticket "
+            #          "with `linode-cli support ticket-create`".format(
+            #         self.spec_version, spec_version), file=stderr)
 
         if not 199 < result.status_code < 399:
             self._handle_error(result)
